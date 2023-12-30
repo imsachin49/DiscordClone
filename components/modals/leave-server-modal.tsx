@@ -47,7 +47,7 @@ export const LeaveServerModal = () => {
             <span className="font-semibold text-indigo-500">
               {server?.name}
             </span>
-            ? You Won't be able to rejoin unless you are invited back.
+            ? You Won{"'"}t be able to rejoin unless you are invited back.
           </DialogDescription>
         </DialogHeader>
         <DialogFooter className="bg-gray-100 px-6 py-4">
