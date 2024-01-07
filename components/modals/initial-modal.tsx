@@ -37,11 +37,12 @@ const formSchema = z.object({
 });
 
 export const InitialModal = () => {
-  const [isMounted, setIsMounted] = useState(false);
+  // const [isMounted, setIsMounted] = useState(false);
   const router=useRouter();
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+
+  // useEffect(() => {
+    // setIsMounted(true);
+  // }, []);
 
   const form = useForm({
     resolver: zodResolver(formSchema),
@@ -64,7 +65,7 @@ export const InitialModal = () => {
   };
 
   // to fix hydration mismatch error
-  if (!isMounted) return null;
+  // if (!isMounted) return null;
 
   return (
     <Dialog open>
