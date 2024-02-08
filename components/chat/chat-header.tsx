@@ -1,8 +1,10 @@
+"use client";
 import { Hash } from "lucide-react";
 import { MobileToggle } from "../mobile-toggle";
 import { UserAvatar } from "../user-avatar";
 import { SocketIndicator } from "../socket-indicator";
 import { ChatVideoButton } from "./chat-video-button";
+import { useEffect, useState } from "react";
 
 interface ChatHeaderProps {
   serverId: string;
@@ -17,6 +19,16 @@ export const ChatHeader = ({
   type,
   imageUrl,
 }: ChatHeaderProps) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div
       className="text-md font-semibold px-3 
